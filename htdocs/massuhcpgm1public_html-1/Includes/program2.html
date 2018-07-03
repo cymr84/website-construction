@@ -1,0 +1,330 @@
+<!-- 
+***********************************************************************************
+Page Name  : current page name 
+Author       : Your Name 
+Your URL  : ocelot-aul.fiu/~__________
+Course       : CGS 4854 session, date, and time
+Program #  : Assignment #
+Purpose      : Describe what this page does 
+Due Date    : MM/DD/YYYY 
+Certification: 
+I hereby certify that this work is my own and none of it is the work of any other person. 
+..........{ your signature }..........
+******************************************************************************* -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WILD ANIMALS Inc</title>
+
+        <style type="text/css">
+            nav ul ul 
+            {
+                display: none;
+            }
+
+
+            nav ul li:hover > ul 
+            {
+                display: block;
+            }
+
+
+            nav ul 
+            {
+                background: #efefef; 
+                background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+                background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+                background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+                box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+                padding: 0 20px;
+                border-radius: 10px;  
+                list-style: none;
+                position: relative;
+                display: inline-table;
+            }
+
+
+            nav ul:after 
+            {
+                content: ""; clear: both; display: block;
+            }
+
+
+            nav ul li 
+            {
+                float: left;
+            }
+
+
+            nav ul li:hover 
+            {
+                background: #4b545f; 
+                background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+                background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+                background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+            }
+
+
+            nav ul li:hover a 
+            {
+                color: #ffffff; /*=white#ff00ff; /*#fff; */ /*menu name color */
+            }
+
+
+            nav ul li a 
+            {
+                display: block; padding: 25px 40px;
+                color: red; /* main menu name #757575;*/ text-decoration: none;
+            }
+
+
+            nav ul ul 
+            {
+                background: lightslategray; /*#5f6975;*/ border-radius: 0px; padding: 0; /*sub menues */
+                position: absolute; top: 100%;
+            }
+
+
+            nav ul ul li 
+            {
+                float: none; 
+                border-top: 1px solid white; /*#6b727c; */ /*border top */
+                border-bottom: 1px solid #575f6a; /*border down */
+                position: relative;
+            }
+
+
+            nav ul ul li a 
+            {
+                padding: 10px 40px;
+                color: #fff;
+            }	
+
+
+            nav ul ul li a:hover 
+            {
+                background: blue; /* #4b545f; */ /*submenu background color*/
+            }
+
+
+            nav ul ul ul 
+            {
+                position: absolute; left: 100%; top:0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">program 1</a>
+                    <ul>
+                        <li><a href="page1.html">page1</a></li>
+                        <li><a href="page2.html">page2</a></li>
+                        <li><a href="page3.html">page3</a></li>
+                        <li><a href="page4.html">page4</a></li>
+                        <li><a href="../index.html">home</a></li>
+                    </ul>
+                <li><a href="program2.html">program 2</a></li>
+                <li><a href="../index.html">home</a></li>
+            </ul>
+        </nav>
+
+        <form method="post" action="controller2.php">
+
+            <!--            TITLE PAGE-->
+            <div align="center" style="font-size: 20px;"><b>Best Zoos in the USA</b></div>
+            <br>	
+
+            <table style="width: 50%; margin: 0px auto;">
+                <tr>
+                    <!--                TELEPHONE-->
+                    <td style="text-align: left; width: 10%">Telephone &nbsp; </td>
+                    <td style="width: 20%; text-align: left">
+                        <input type="text" name="Telephone" value="<?php echo $Telephone ?>" style="width: 100%;">
+                    </td>
+                    
+                    <!--                CHECKBOX LAZOO-->
+                    <td style="text-align: center"> 
+                        <input type="checkbox" name="LAZoo" <?php if ($LAZoo == "LAZoo") echo checked;?>    value="LAZoo" > LAZoo &nbsp; &nbsp; </td>
+                    <td>
+                        <a href="http://www.lazoo.org">
+                            <img src="../Images/bear.jpg"/></a>
+                    </td>
+                    <!--                TYPES OF ANIMALS AT LAZOO-->
+                    <td >Animals &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "horses")   echo "checked"; ?>
+                        name="Animals" value="horses" checked > Horses &nbsp; &nbsp; </td>
+                    <td text-align: left>
+                        <input type="radio" <?php if ($Animals == "bears")   echo "checked"; ?>
+                        name="Animals" value="bears" checked > Bears &nbsp; &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "monkeys")   echo "checked"; ?>
+                        name="Animals" value="monkeys" checked > Monkeys &nbsp; &nbsp; </td>
+                </tr>
+
+                
+<!--                LAST NAME-->
+                <tr>
+                    <td style="text-align: left; width: 10%">Last Name &nbsp; </td>
+                    <td style="width: 20%;">
+                        <input type="text" name="LastName" value="<?php echo $LastName ?>" style="width: 100%;">
+                    </td>
+                    
+<!--                    CHECKBOX MIAMIZOO-->
+                    <td style="text-align: center"> 
+                        <input type="checkbox" name="MiamiZoo" <?php if ($MiamiZoo == "MiamiZoo") echo checked;?>    value="MiamiZoo" > MiamiZoo &nbsp; &nbsp; </td>
+                    <td>
+                        <a href="http://www.zoomiami.org">
+                            <img src="../Images/elephant.jpg"/></a>
+                    </td>
+<!--                    TYPES OF ANIMALS AT MIAMI ZOO-->
+                    <td >Animals &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "snakes")   echo "checked"; ?>
+                        name="Animals" value="snakes" checked > Snakes &nbsp; &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "lizards")   echo "checked"; ?>
+                        name="Animals" value="lizards" checked > Lizards &nbsp; &nbsp; </td>
+                    <td text-align: left>
+                        <input type="radio" <?php if ($Animals == "ferrets")   echo "checked"; ?>
+                        name="Animals" value="ferrets" checked > Ferrets &nbsp; &nbsp; </td>
+                </tr>  
+
+<!--                FIRST NAME-->
+                <tr>
+                    <td style="text-align: left; width: 10%">First Name &nbsp; </td>
+                    <td style="width: 20%;">
+                        <input type="text" name="FirstName" value="<?php echo $FirstName ?>" style="width: 100%;">
+                    </td>
+                    
+<!--                    CHECKBOX NEW YORK ZOO-->
+                    <td style="text-align: center"> 
+                        <input type="checkbox" name="NewYorkZoo" <?php if ($NewYorkZoo == "NewYorkZoo") echo checked;?>    value="NewYorkZoo" > NewYorkZoo &nbsp; &nbsp; </td>
+                    <td>
+                        <a href="https://centralparkzoo.com">
+                            <img src="../Images/rhino.jpg"/></a>
+                    </td>
+                    
+<!--                    ANIMALS AT NEW YORK ZOO-->
+                    <td >Animals &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "giraffe")   echo "checked"; ?>
+                        name="Animals" value="giraffe" checked > Giraffe &nbsp; &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "buffalo")   echo "checked"; ?>
+                        name="Animals" value="buffalo" checked > Buffalo &nbsp; &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "deer")   echo "checked"; ?>
+                        name="Animals" value="deer" checked > Deer &nbsp; &nbsp; </td>
+                </tr>
+
+<!--                EMAIL-->
+                <tr>
+                    <td style="text-align: left; width: 10%">Email &nbsp; </td>
+                    <td style="width: 20%;">
+                        <input type="text" name="Email" value="<?php echo $Email ?>" style="width: 100%;">
+                    </td>
+                    
+<!--                    CHECKBOX HOUSTON ZOO-->
+                    <td style="text-align: center">
+                        <input type="checkbox" name="HoustonZoo" <?php if ($HoustonZoo == "HoustonZoo") echo checked;?>    value="HoustonZoo" > HoustonZoo &nbsp; &nbsp; </td>
+                    <td>
+                        <a href="https://www.houstonzoo.org">
+                            <img src="../Images/toto.jpg"/></a>
+                    </td>
+                    
+<!--                    ANIMALS AT HOUSTON ZOO-->
+                    <td >Animals &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "gorilla")   echo "checked"; ?>
+                        name="Animals" value="gorilla" checked > Gorilla &nbsp; &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "zebra")   echo "checked"; ?>
+                        name="Animals" value="zebra" checked > Zebra &nbsp; &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "antelope")   echo "checked"; ?>
+                        name="Animals" value="antelope" checked > Antelope &nbsp; &nbsp; </td>
+                </tr>
+
+<!--                REQUEST-->
+                <tr>
+                    <td style="text-align: left; width: 10%">Request &nbsp; </td>
+                    <td style="width: 20%;">
+                        <div> 
+                            <textarea name="Request" value="<?php echo $Request ?>" style="width: 100%; height: 50px;">
+                            </textarea> 
+                        </div>
+                    </td>
+
+                    <td style="text-align: center"> 
+                        <input type="checkbox" name="SanDiegoZoo" <?php if ($SanDiegoZoo == "SanDiegoZoo") echo checked;?>    value="SanDiegoZoo" > SanDiegoZoo &nbsp; &nbsp; </td>
+                    <td>
+                        <a href="http://www.sdzsafaripark.org">
+                            <img src="../Images/turtle.jpg"/>
+                        </a>
+                    </td>
+                    <td >Animals &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "turtle")   echo "checked"; ?>
+                        name="Animals" value="turtle" > Turtle &nbsp; &nbsp; </td>
+                    <td text-align: left> 
+                        <input type="radio" <?php if ($Animals == "elephant")   echo "checked"; ?>
+                        name="Animals" value="elephant" > Elephant &nbsp; &nbsp; </td>
+                    <td text-align: left>
+                        <input type="radio" <?php if ($Animals == "crocodile")   echo "checked"; ?>
+                        name="Animals" value="crocodile" > Crocodile &nbsp; &nbsp; </td>
+                </tr>
+            </table>
+
+            <table style="width: 50%; margin: 0px auto;">
+                <tr>
+                    <td style="width: 5%; text-align: right;">Age &nbsp; </td>
+                    <td style="width: 20%; text-align: left;">
+                        <select name="Age" style="width: 100%"size="1";>
+                            <option value="Under_20" <?php if ($Age == "Under_20") echo selected ?> >Under 20
+                            </option>
+                        <option value="20-30"    <?php if ($Age == "20-30")    echo selected ?> >20-30
+                </option>
+                <option value="31-40"    <?php if ($Age == "31-40")    echo selected ?> >31-40
+                </option>
+            <option value="41-50"    <?php if ($Age == "41-50")    echo selected ?> >41-50
+            </option>
+        <option value="51-60"    <?php if ($Age == "51-60")    echo selected ?> >51-60
+        </option>
+    <option value="Above_60" <?php if ($Age == "Above_60") echo selected ?> >Above 60
+    </option>
+</select>
+</td>
+</tr>
+</table>
+
+<table style="width: 50%; margin: 0px auto; ">
+    <tr>           
+        <td style="text-align: center">                
+            $message 
+        </td>
+    </tr>
+</table>
+
+<table style="width: 50%; margin: 0px auto; text-align: center">
+    <tr>           
+        <td><input type="submit" name="Find"   value="Find"></td>
+        <td><input type="submit" name="Save"   value="Save"></td>
+        <td><input type="submit" name="Modify" value="Modify"></td>
+        <td><input type="submit" name="Delete" value="Delete"></td>
+        <td><input type="button" name="Clear"  value="Clear"></td>
+    </tr>
+</table>
+
+
+</form>
+
+</body>
+
+
+</html>
